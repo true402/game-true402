@@ -1,5 +1,7 @@
 # game-true402
 
+[![PyPI version](https://img.shields.io/pypi/v/game-true402)](https://pypi.org/project/game-true402/) &nbsp; **Stable · production-ready** — semver-stable public API (v1.0).
+
 <!-- meta description: Give a Virtuals Protocol GAME agent an on-chain rug, honeypot and address-safety gate — pay per call over x402, USDC on Base, no account and no API key. -->
 
 <p><strong>true402 safety stalls as <a href="https://docs.game.virtuals.io/">Virtuals Protocol GAME</a> functions.</strong> Give a G.A.M.E agent a pay-per-call, on-chain rug/honeypot gate for Base tokens over <a href="https://x402.org">x402</a> — USDC on Base, no account, no API key. The wallet is the identity, and the safety stalls have a free daily trial, so the functions work out of the box with no wallet configured.</p>

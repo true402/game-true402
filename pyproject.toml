@@ -4,12 +4,13 @@ build-backend = "hatchling.build"
 
 [project]
 name = "game-true402"
-version = "0.1.0"
+version = "1.0.0"
 description = "true402 safety stalls as Virtuals Protocol GAME functions — pay-per-call on-chain rug/honeypot & address safety for Base AI agents over x402 (USDC, no account, no API key)."
 readme = "README.md"
 license = { text = "MIT" }
 requires-python = ">=3.10"
 keywords = ["virtuals", "game-sdk", "game-by-virtuals", "x402", "base", "rug-check", "honeypot", "token-safety", "crypto", "ai-agent", "agent-tools", "defi", "web3"]
+classifiers = ["Development Status :: 5 - Production/Stable"]
 authors = [{ name = "true402", email = "contact@true402.dev" }]
 dependencies = [
     "game_sdk>=0.1",
