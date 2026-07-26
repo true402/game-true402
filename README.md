@@ -93,3 +93,10 @@ action_space = true402_functions(PayOpts(
 ## §08 · License
 
 <p>MIT</p>
+
+## Also available for
+
+MCP (Claude Code / Desktop, Cursor, **Hermes**) · **Hermes Agent** · **OpenClaw** · **ElizaOS** ·
+**LangChain** · **CrewAI** · **Vercel AI SDK** · **Coinbase AgentKit** · **Virtuals GAME** · CLI —
+same on-chain checks, one install command each:
+**[true402.dev/integrations](https://true402.dev/integrations)**
