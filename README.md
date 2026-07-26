@@ -88,6 +88,8 @@ action_space = true402_functions(PayOpts(
 <li>Also available: <a href="https://www.npmjs.com/package/@true402.dev/langchain">LangChain</a> · <a href="https://pypi.org/project/crewai-true402/">CrewAI</a> · <a href="https://www.npmjs.com/package/@true402.dev/mcp-server">MCP server</a></li>
 </ul>
 
+**Checking tokens by hand?** Send any Base token address to [@True402bot](https://t.me/True402bot) on Telegram — same on-chain checks, free, no wallet.
+
 ## §08 · License
 
 <p>MIT</p>
