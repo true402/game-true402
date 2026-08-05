@@ -45,6 +45,8 @@ worker.run("Is token 0x… safe to buy on Base?")
 <li><code>check_token_safety</code> — structural safety score 0–100 and flags (honeypot sim, liquidity, mint/ownership). Lighter than the report. ~$0.005.</li>
 <li><code>check_address_safety</code> — screen any address before you send to / approve / call it: EOA-vs-contract, ETH+USDC balance, activity, ownership, upgradeable-proxy (EIP-1967) detection. ~$0.005.</li>
 <li><code>check_deployer</code> — deployer wallet reputation (age, contracts shipped, fresh-throwaway flag) to catch serial ruggers a structural scan can't see. ~$0.008.</li>
+<li><code>check_liquidity_history</code> — what has <strong>already</strong> happened to the token's liquidity: every removal true402 observed, with amount, block and transaction hash, plus the other tokens drained in the <strong>same transaction</strong>. A live simulation cannot see this — a pool drained last month looks healthy today if it was re-seeded. ~$0.005.</li>
+<li><code>preflight_transaction</code> — the last check before signing. Send the <strong>unsigned</strong> transaction and get a simulation (does it revert?), the decoded intent (unlimited approval?) and the counterparty's removal history. Takes <strong>no private key and no signature</strong>, so it cannot broadcast or front-run. ~$0.008.</li>
 </ul>
 
 ## §04 · Configuration
