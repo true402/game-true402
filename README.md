@@ -107,6 +107,12 @@ action_space = true402_functions(PayOpts(
 
 <p>MIT</p>
 
+## Guides
+
+- [Add a rug check to a Virtuals GAME agent](https://true402.dev/guides/add-rug-check-virtuals-protocol-game-agent)
+- [Base honeypot checker (free, in the browser)](https://true402.dev/check)
+- [The x402 protocol, explained](https://true402.dev/guides/what-is-x402)
+
 ## Also available for
 
 MCP (Claude Code / Desktop, Cursor, **Hermes**) · **Hermes Agent** · **OpenClaw** · **ElizaOS** ·
