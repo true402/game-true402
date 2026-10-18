@@ -238,7 +238,7 @@ def token_report_function(opts_provider: Callable[[], PayOpts]) -> Function:
             "Pre-trade rug/honeypot gate for a Base ERC-20 token. Runs a real on-chain buy/sell "
             "honeypot simulation (proves sellability, not just a static scan) plus liquidity, "
             "ownership/mint and recent rug activity, and returns a composite avoid/caution/ok "
-            "verdict. Call this BEFORE buying any token. Pays ~$0.01 USDC on Base over x402."
+            "verdict. Call this BEFORE buying any token. Pays ~$0.008 USDC on Base over x402."
         ),
         args=[
             Argument(
