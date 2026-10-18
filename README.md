@@ -43,7 +43,7 @@ worker.run("Is token 0x… safe to buy on Base?")
 <p><strong>On-chain safety</strong> (free daily trial on most — <code>check_deployer</code> is paid from the first call):</p>
 
 <ul>
-<li><code>check_token_report</code> — <strong>primary pre-trade gate.</strong> Composite <strong>avoid / caution / ok</strong> verdict from a real on-chain buy/sell honeypot simulation (proves sellability, not just a static scan) plus liquidity, ownership/mint and recent rug activity. Call before buying. ~$0.01.</li>
+<li><code>check_token_report</code> — <strong>primary pre-trade gate.</strong> Composite <strong>avoid / caution / ok</strong> verdict from a real on-chain buy/sell honeypot simulation (proves sellability, not just a static scan) plus liquidity, ownership/mint and recent rug activity. Call before buying. ~$0.008.</li>
 <li><code>check_token_safety</code> — structural safety score 0–100 and flags (honeypot sim, liquidity, mint/ownership). Lighter than the report. ~$0.005.</li>
 <li><code>check_address_safety</code> — screen any address before you send to / approve / call it: EOA-vs-contract, ETH+USDC balance, activity, ownership, upgradeable-proxy (EIP-1967) detection. ~$0.005.</li>
 <li><code>check_deployer</code> — deployer wallet reputation (age, contracts shipped, fresh-throwaway flag) to catch serial ruggers a structural scan can't see. <strong>No free trial — paid from the first call.</strong> ~$0.008.</li>
@@ -88,7 +88,7 @@ action_space = true402_functions(PayOpts(
 <ol>
 <li><p><strong>Do I need a true402 account or API key?</strong> No. Payment is the auth: the agent POSTs, gets an HTTP 402 with payment terms, signs an EIP-3009 USDC authorization, and retries. The wallet is the identity.</p></li>
 <li><p><strong>Does it work without a funded wallet?</strong> Yes, up to a point, for most of the on-chain safety functions (<code>check_token_report</code>, <code>check_token_safety</code>, <code>check_address_safety</code>, <code>check_liquidity_history</code>, <code>preflight_transaction</code>). They have a free daily trial, so they return real results with no <code>PAYER_PRIVATE_KEY</code> set — until the trial is exhausted, then they require payment. <code>check_deployer</code> has no free trial and needs a funded wallet from the first call, same as the SEO/search functions (<code>check_backlinks</code>, <code>get_keyword_volume</code>, <code>get_ranked_keywords</code>, <code>get_keyword_ideas</code>).</p></li>
-<li><p><strong>Which function should the agent call before trading?</strong> <code>check_token_report</code>. It is the composite avoid/caution/ok gate and folds in the honeypot simulation, liquidity, ownership and deployer signal.</p></li>
+<li><p><strong>Which function should the agent call before trading?</strong> <code>check_token_report</code>. It is the composite avoid/caution/ok gate and folds in the honeypot simulation, liquidity, ownership and recent rug activity.</p></li>
 <li><p><strong>Why Python and not the Node GAME SDK?</strong> GAME's Python SDK is the canonical reference, and its executables run synchronously — a clean match for the synchronous x402 payer, with no async wrapping. A TypeScript build can wrap the same stalls via the <code>@true402.dev/langchain</code> payer.</p></li>
 <li><p><strong>What does the executable return to the planner?</strong> A <code>(FunctionResultStatus.DONE | .FAILED, message, info)</code> tuple. The message is an agent-readable summary; the <code>info</code> dict is the full stall JSON for your <code>get_state_fn</code>.</p></li>
 </ol>
