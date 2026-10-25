@@ -6,6 +6,6 @@ to pyproject.toml.
 """
 
 CLIENT_ID = "game"
-VERSION = "1.4.4"
+VERSION = "1.4.5"
 PACKAGE = "game-true402"
 INSTALL = "pip install -U game-true402"
